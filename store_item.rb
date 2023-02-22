@@ -20,6 +20,3 @@ end
 
 shirts = Item.new("shirt", "black", "athletic", "cotton")
 shirts.print_item
-
-shirts.material = "nylon"
-p shirts.material
