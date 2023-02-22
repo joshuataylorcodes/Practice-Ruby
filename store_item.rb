@@ -1,22 +1,21 @@
 class Item
-  attr_reader :item, :color, :style
-  attr_writer :material
+  attr_accessor :item, :color, :stlye
 
-  def initialize(input_item, input_color, input_style, input_material)
-    @item = input_item
-    @color = input_color
-    @style = input_style
-    @material = input_material
+  def initialize(input_options)
+    @item = input_options[:item]
+    @color = input_options[:color]
+    @style = input_options[:style]
+    @material = input_options[:material]
   end
 
-  #def material=(text)
-  #  @material = text
-  #end
-
   def print_item
-    puts "The New Item we are selling is #{color} #{item} made from #{@material}. The style is #{style}."
+    puts "The New Item we are selling is #{color} #{item} made from #{material}. The style is #{style}."
   end
 end
 
-shirts = Item.new("shirt", "black", "athletic", "cotton")
+shirts = Item.new({ item: "shirt", color: "black", style: "athletic", material: "cotton" })
 shirts.print_item
+#pants = Item.new({ :item "pant", :color "red", :style "dress", :material "wool"})
+#pants.print_item
+#shoes = Item.new({ :item "shoe", :color "white", :style "casual", :material "leather"})
+#shoes.print_item
