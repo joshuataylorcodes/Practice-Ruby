@@ -1,5 +1,5 @@
 class Item
-  attr_accessor :item, :color, :stlye
+  attr_accessor :item, :color, :style, :material
 
   def initialize(input_options)
     @item = input_options[:item]
@@ -14,8 +14,22 @@ class Item
 end
 
 shirts = Item.new({ item: "shirt", color: "black", style: "athletic", material: "cotton" })
-shirts.print_item
-#pants = Item.new({ :item "pant", :color "red", :style "dress", :material "wool"})
-#pants.print_item
-#shoes = Item.new({ :item "shoe", :color "white", :style "casual", :material "leather"})
-#shoes.print_item
+p shirts
+pants = Item.new({ item: "long pants", color: "red", style: "dress", material: "wool" })
+p pants
+shoes = Item.new({ item: "shoe", color: "white", style: "casual", material: "leather" })
+p shoes
+
+class Food < Item
+  attr_accessor :shelf_life
+
+  def initialize(input_options)
+    super
+    @shelf_life = input_options[:shelf_life]
+  end
+end
+
+apple = Food.new({ item: "Apple", shelf_life: "2 weeks" })
+p apple
+apple.style = "granny smith"
+p apple
