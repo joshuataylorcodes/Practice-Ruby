@@ -1,13 +1,25 @@
-#ruby style
+class Item
+  attr_reader :item, :color, :style
+  attr_writer :material
 
-shirts = { :color => "black", :style => "athletic", :material => "cotton" }
-shoes = { :color => "red", :style => "casual", :material => "leather" }
-pants = { :color => "blue", :style => "dress", :material => "polyester" }
+  def initialize(input_item, input_color, input_style, input_material)
+    @item = input_item
+    @color = input_color
+    @style = input_style
+    @material = input_material
+  end
 
-#java style
-shirts2 = { color: "black", style: "athletic", material: "cotton" }
-shoes2 = { color: "red", style: "casual", material: "leather" }
-pants2 = { color: "blue", style: "dress", material: "polyester" }
+  #def material=(text)
+  #  @material = text
+  #end
 
-puts "#{pants[:color]} #{pants[:style]} #{pants[:material]} are the styles"
-puts "#{pants1[:color]} #{pants1[:style]} #{pants1[:material]} are the styles"
+  def print_item
+    puts "The New Item we are selling is #{color} #{item} made from #{@material}. The style is #{style}."
+  end
+end
+
+shirts = Item.new("shirt", "black", "athletic", "cotton")
+shirts.print_item
+
+shirts.material = "nylon"
+p shirts.material
