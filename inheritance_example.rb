@@ -32,8 +32,10 @@ end
 car = Car.new
 bike = Bike.new
 
-p car.accelerate
-p bike.accelerate
+bike.accelerate
+car.accelerate
+p car
+p bike
 
 car.honk_horn
 bike.ring_bell
