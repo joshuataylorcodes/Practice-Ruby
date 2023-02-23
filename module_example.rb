@@ -38,6 +38,10 @@ bike = Bike.new
 
 bike.accelerate
 car.accelerate
+bike.accelerate
+car.accelerate
+bike.accelerate
+car.accelerate
 p car
 p bike
 
