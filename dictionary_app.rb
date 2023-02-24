@@ -29,7 +29,7 @@ while true
   word_pronunc = response2.parse(:json)
   pronunciation = word_pronunc[0]["raw"]
 
-  response3 = HTTP.get("https://api.wordnik.com/v4/word.json/#{word}/examples?includeDuplicates=false&useCanonical=false&limit=5&api_key=1ag35n7efcpe893tqh53eqgsyrhpyqwov0pqh73q17qwq9xtj")
+  response3 = HTTP.get("https://api.wordnik.com/v4/word.json/#{word}/examples?includeDuplicates=false&useCanonical=false&limit=5&api_key=#{api_key}")
 
   word_example = response3.parse(:json)
   example = word_example["examples"][0]["text"]
